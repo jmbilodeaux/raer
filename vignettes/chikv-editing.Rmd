@@ -1,0 +1,37 @@
+---
+title: "chikv-editing"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{chikv-editing}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(raer)
+library(fs)
+library(SummarizedExperiment)
+```
+
+
+```{r}
+samples = list(bams = c('A1','A2','A3', 'M1', 'M2', 'M3'))
+base_dir = '/beevol/home/sheridanr/Projects/morrison-scRNA-seq/results/2021-01-08'
+bam_path = '/outs/possorted_genome_bam.bam'
+bai_path = '/outs/possorted_genome_bam.bam.bai'
+fa_path = '/beevol/home/rbilab/ref/cellranger/mouse/mm10-CHIKV/mm10-CHIKV-AF15561.fa'
+  
+fns = list(
+  bams = fs::path(base_dir, sample, bam_path), 
+  bais = fs:: path(base_dir, sample, bai_path),
+  fasta = fs::path(fa_path)
+  )
+```
+

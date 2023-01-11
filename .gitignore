@@ -9,3 +9,4 @@ tools
 *.xml
 *.bai
 *.bri
+inst/doc
